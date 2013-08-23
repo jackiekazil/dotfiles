@@ -1,0 +1,116 @@
+# bash export settings
+export TERM=xterm-color
+export CLICOLOR=1
+export LSCOLORS="ExFxCxDxBxegedabagacad"
+export EDITOR=vim
+export LESS="-erX"
+export INPUTRC=~/.inputrc
+export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
+export HISTCONTROL=erasedups
+export HISTSIZE=10000
+export HISTFILESIZE=10000
+export HISTCONTROL=ignoredups
+export HISTIGNORE="&:ls:ls *:ll:git:git status"
+
+# For ORACLE, but we aren't using that anymore
+#export ORACLE_HOME='/usr/local/oracle/instantclient'
+#export DYLD_LIBRARY_PATH=$ORACLE_HOME
+#export SQLPATH="/usr/local/oracle/instantclient"
+
+export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:${PATH}
+export PGHOST="/var/pgsql_socket"
+
+export WORKON_HOME=~/Projects/envs
+source /usr/local/bin/virtualenvwrapper.sh
+
+# shopt customizations
+shopt -s histappend	# append to bash_history if shell quits.
+shopt -s checkwinsize	# check window size after each command and update the values of LINES and COLUMNS if need be.
+shopt -s cdspell	# enable spelling corrects to the cd command.
+
+# set customizations
+set -o noclobber	# prevent overwriting files with cat.
+set -o ignoreeof	# prevent Ctrl+d from automatically logging you out.
+
+# stty customizations
+stty -ixon		# disable Ctrl+s and Ctrl+q.
+stty erase ^H		# enable the backspace keystroke.
+stty ek			# ???
+
+# custom aliases
+alias emacs="emacs -nw"
+alias em="emacs "
+alias vi='vim'
+alias ll='ls -alhG'
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+alias searchcode="find ./ -name '*.py' -or -name '*.html' -or -name '*.js' -or -name '*.css' | xargs grep "
+alias detabbify='sed -i -r -s -e "s/\t/ /g"'
+alias du='du -sh' # disk usage is human
+alias df='df -h' # disk freespace is human
+alias hgrep='history | sed s/\ \ .*\ \ // | grep'
+alias screen="screen -RaAU"
+alias su='su -l'
+alias jl='j -l'
+alias jt='j -t recent'
+alias jr='j -t rank'
+
+
+#take me home, because I am lazy
+alias home='cd ~/'
+
+#subblime edit
+alias se='open -a "Sublime Text 2"'
+
+#dev folder shortcuts
+alias chronam-code='cd /Users/jkazil/Projects/code/ndnp/chronam'
+alias chronam-env='cd /Users/jkazil/Projects/envs/chronam'
+
+alias conx-tm='bash /Users/jkazil/Projects/scripts/conx-tm.sh'
+
+# Used to get git auto completion to work, taken from here:
+# http://superuser.com/questions/31744/how-to-get-git-completion-bash-to-work-on-mac-os-x
+
+
+# Set prompt display
+__has_parent_dir () {
+    # Utility function so we can test for things like .git/.hg without firing
+    # up a separate process
+    test -d "$1" && return 0;
+
+    current="."
+    while [ ! "$current" -ef "$current/.." ]; do
+        if [ -d "$current/$1" ]; then
+            return 0;
+        fi
+        current="$current/..";
+    done
+
+    return 1;
+}
+
+# This is to fix and define __git_ps1
+source ~/.git-prompt.sh
+
+__vcs_name() {
+    if [ -d .svn ]; then
+        echo " [svn]";
+    elif [ -d RCS ];    then
+        echo " [RCS]";
+    elif __has_parent_dir ".git"; then
+        echo "$(__git_ps1 ' [git %s]')";
+    elif __has_parent_dir ".hg"; then
+        echo " [hg $(hg branch)]"
+    fi
+}
+
+case "$TERM" in
+    xterm-color) color_prompt=yes;;
+esac
+if [ "$color_prompt" = yes ]; then
+    PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[0;33m\]$(__vcs_name) \[\033[00m\]\$ '
+else
+    PS1='\u@\h:\w$(__vcs_name) \$ '
+fi
+#/Set prompt display
