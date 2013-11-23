@@ -64,13 +64,19 @@ alias home='cd ~/'
 alias se='open -a "Sublime Text 2"'
 
 #dev folder shortcuts
-alias chronam-code='cd /Users/jkazil/Projects/code/ndnp/chronam'
-alias chronam-env='cd /Users/jkazil/Projects/envs/chronam'
+#alias chronam-code='cd /Users/jkazil/Projects/code/ndnp/chronam'
+#alias chronam-env='cd /Users/jkazil/Projects/envs/chronam'
 
-alias conx-tm='bash /Users/jkazil/Projects/scripts/conx-tm.sh'
+#alias conx-tm='bash /Users/jkazil/Projects/scripts/conx-tm.sh'
+
+#Postgres
+alias pg_start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+alias pg_stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
+alias pg_tail='tail -f /usr/local/var/postgres/server.log'
 
 # Used to get git auto completion to work, taken from here:
 # http://superuser.com/questions/31744/how-to-get-git-completion-bash-to-work-on-mac-os-x
+
 
 
 # Set prompt display
