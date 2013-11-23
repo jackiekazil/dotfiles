@@ -18,6 +18,8 @@ export HISTIGNORE="&:ls:ls *:ll:git:git status"
 #export SQLPATH="/usr/local/oracle/instantclient"
 
 export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:${PATH}
+export PATH=/usr/local/Cellar/ruby/2.0.0-p247/bin:${PATH}
+
 export PGHOST="/var/pgsql_socket"
 
 export WORKON_HOME=~/Projects/envs
