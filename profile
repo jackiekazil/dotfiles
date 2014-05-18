@@ -17,8 +17,15 @@ export HISTIGNORE="&:ls:ls *:ll:git:git status"
 #export DYLD_LIBRARY_PATH=$ORACLE_HOME
 #export SQLPATH="/usr/local/oracle/instantclient"
 
-export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:${PATH}
-export PATH=/usr/local/Cellar/ruby/2.0.0-p247/bin:${PATH}
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home
+
+#EC2 addition
+export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.6.12.2/libexec"
+export PATH=$PATH:$EC2_HOME/bin
+
+export PATH=~/bin:/usr/local/sbin:/usr/local/mysql/bin:${PATH}
+export PATH=/usr/local/Cellar/ruby/2.1.1/bin:${PATH}
+export PATH=/usr/local/bin:$PATH
 
 export PGHOST="/var/pgsql_socket"
 
@@ -122,3 +129,5 @@ else
     PS1='\u@\h:\w$(__vcs_name) \$ '
 fi
 #/Set prompt display
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
