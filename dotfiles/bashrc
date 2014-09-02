@@ -24,12 +24,13 @@ export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.6.12.2/libexec"
 export PATH=$PATH:$EC2_HOME/bin
 
 export PATH=~/bin:/usr/local/sbin:/usr/local/mysql/bin:${PATH}
-export PATH=/usr/local/Cellar/ruby/2.1.1/bin:${PATH}
+export PATH=/usr/local/opt/ruby/bin:${PATH}
 export PATH=/usr/local/bin:$PATH
 
 export PGHOST="/var/pgsql_socket"
 
-export WORKON_HOME=~/Projects/envs
+export WORKON_HOME=$HOME/Projects/envs
+export PROJECT_HOME=$HOME/Projects/code
 source /usr/local/bin/virtualenvwrapper.sh
 
 # shopt customizations
@@ -82,6 +83,7 @@ alias se='open -a "Sublime Text 2"'
 alias pg_start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias pg_stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 alias pg_tail='tail -f /usr/local/var/postgres/server.log'
+export PGHOST=localhost
 
 # Used to get git auto completion to work, taken from here:
 # http://superuser.com/questions/31744/how-to-get-git-completion-bash-to-work-on-mac-os-x
