@@ -31,7 +31,7 @@ export PGHOST="/var/pgsql_socket"
 
 export WORKON_HOME=$HOME/Projects/envs
 export PROJECT_HOME=$HOME/Projects/code
-source /usr/local/bin/virtualenvwrapper.sh
+# source /usr/local/bin/virtualenvwrapper.sh
 
 # shopt customizations
 shopt -s histappend	# append to bash_history if shell quits.
