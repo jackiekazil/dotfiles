@@ -74,7 +74,8 @@ alias home='cd ~/'
 alias se='open -a "Sublime Text 2"'
 
 #clean up unused branches
-alias cleanup_git='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
+alias git_cleanup_local='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
+alias git_cleanup_remote='git remote prune origin'
 
 
 #dev folder shortcuts
