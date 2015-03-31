@@ -31,7 +31,7 @@ export PGHOST="/var/pgsql_socket"
 
 export WORKON_HOME=$HOME/Projects/envs
 export PROJECT_HOME=$HOME/Projects/code
-# source /usr/local/bin/virtualenvwrapper.sh
+source /usr/local/bin/virtualenvwrapper.sh
 
 # shopt customizations
 shopt -s histappend	# append to bash_history if shell quits.
@@ -89,6 +89,10 @@ alias pg_start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/ser
 alias pg_stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 alias pg_tail='tail -f /usr/local/var/postgres/server.log'
 export PGHOST=localhost
+
+#Mongo
+alias mongostart='mongod --dbpath=/Users/jacquelinekazil/Projects/code/data/mongodb/ &'
+
 
 # Used to get git auto completion to work, taken from here:
 # http://superuser.com/questions/31744/how-to-get-git-completion-bash-to-work-on-mac-os-x
