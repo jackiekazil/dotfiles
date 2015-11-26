@@ -71,7 +71,7 @@ alias jr='j -t rank'
 alias home='cd ~/'
 
 #subblime edit
-alias se='open -a "Sublime Text 2"'
+alias se='open -a "Sublime Text"'
 
 #clean up unused branches
 alias git_cleanup_local='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
