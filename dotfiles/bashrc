@@ -12,12 +12,6 @@ export HISTFILESIZE=10000
 export HISTCONTROL=ignoredups
 export HISTIGNORE="&:ls:ls *:ll:git:git status"
 
-# For ORACLE, but we aren't using that anymore
-#export ORACLE_HOME='/usr/local/oracle/instantclient'
-#export DYLD_LIBRARY_PATH=$ORACLE_HOME
-#export SQLPATH="/usr/local/oracle/instantclient"
-
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home
 
 #EC2 addition
 export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.6.12.2/libexec"
@@ -29,8 +23,9 @@ export PATH=/usr/local/bin:$PATH
 
 export PGHOST="/var/pgsql_socket"
 
-export WORKON_HOME=$HOME/Projects/envs
-export PROJECT_HOME=$HOME/Projects/code
+#Python settings
+export WORKON_HOME=$HOME/code/python/envs
+export PROJECT_HOME=$HOME/code/python/code
 source /usr/local/bin/virtualenvwrapper.sh
 
 # shopt customizations
@@ -71,18 +66,11 @@ alias jr='j -t rank'
 alias home='cd ~/'
 
 #subblime edit
-alias se='open -a "Sublime Text"'
+alias se='open -a "Sublime Text 2"'
 
 #clean up unused branches
 alias git_cleanup_local='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
 alias git_cleanup_remote='git remote prune origin'
-
-
-#dev folder shortcuts
-#alias chronam-code='cd /Users/jkazil/Projects/code/ndnp/chronam'
-#alias chronam-env='cd /Users/jkazil/Projects/envs/chronam'
-
-#alias conx-tm='bash /Users/jkazil/Projects/scripts/conx-tm.sh'
 
 #Postgres
 alias pg_start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
@@ -91,12 +79,7 @@ alias pg_tail='tail -f /usr/local/var/postgres/server.log'
 export PGHOST=localhost
 
 #Mongo
-alias mongostart='mongod --dbpath=/Users/jacquelinekazil/Projects/code/data/mongodb/ &'
-
-
-# Used to get git auto completion to work, taken from here:
-# http://superuser.com/questions/31744/how-to-get-git-completion-bash-to-work-on-mac-os-x
-
+#alias mongostart='mongod --dbpath=/Users/jacquelinekazil/Projects/code/data/mongodb/ &'
 
 
 # Set prompt display
@@ -142,4 +125,9 @@ else
 fi
 #/Set prompt display
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+#Load local settings
+export LOCALBASH=~/.bash_local
+if [ -f $LOCALBASH ];
+then
+    source $LOCALBASH
+fi
