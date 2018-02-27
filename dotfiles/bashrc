@@ -24,9 +24,9 @@ export PATH=/usr/local/bin:$PATH
 export PGHOST="/var/pgsql_socket"
 
 #Python settings
-export WORKON_HOME=$HOME/code/python/envs
-export PROJECT_HOME=$HOME/code/python/code
-source /usr/local/bin/virtualenvwrapper.sh
+#export WORKON_HOME=$HOME/code/python/envs
+#export PROJECT_HOME=$HOME/code/python/code
+#source /usr/local/bin/virtualenvwrapper.sh
 
 # shopt customizations
 shopt -s histappend	# append to bash_history if shell quits.
