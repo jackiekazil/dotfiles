@@ -16,3 +16,7 @@ echo "Installing Python3"
 brew install python3
 echo "Python3 install is complete."
 echo "-------------------------------------------------------------------------"
+
+echo "Creating link for Sublime editor"
+ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime
+echo "TODO!!!! DOWNLOAD SUBLIME! https://www.sublimetext.com/"
