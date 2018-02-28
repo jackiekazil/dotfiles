@@ -20,9 +20,13 @@ bash dotfile_backup.sh
 
 Make sure your back ups are in place.
 Then continue with linking your new dotfiles... 
-
 ```
 bash dotfile_link.sh
 ```
 
 Make sure to open a new window to see the updates!
+
+Setup dev env... 
+```
+bash setup_dev_env.sh
+```
