@@ -1,6 +1,6 @@
 export PROJECT_HOME=$HOME/Projects/code
 
-echo "Let\'s back up the existing dotfiles before overriding them!"
+echo "Let's back up the existing dotfiles before overriding them!"
 
 mkdir $PROJECT_HOME/dotfiles_backups
 cp ~/.bashrc $PROJECT_HOME/dotfiles_backups/bashrc
