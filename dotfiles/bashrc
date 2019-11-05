@@ -12,13 +12,7 @@ export HISTFILESIZE=10000
 export HISTCONTROL=ignoredups
 export HISTIGNORE="&:ls:ls *:ll:git:git status"
 
-
-#EC2 addition
-export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.6.12.2/libexec"
-export PATH=$PATH:$EC2_HOME/bin
-
 export PATH=~/bin:/usr/local/sbin:/usr/local/mysql/bin:${PATH}
-export PATH=/usr/local/opt/ruby/bin:${PATH}
 export PATH=/usr/local/bin:$PATH
 
 export PGHOST="/var/pgsql_socket"
@@ -30,7 +24,6 @@ export PGHOST="/var/pgsql_socket"
 
 # shopt customizations
 shopt -s histappend	# append to bash_history if shell quits.
-shopt -s checkwinsize	# check window size after each command and update the values of LINES and COLUMNS if need be.
 shopt -s cdspell	# enable spelling corrects to the cd command.
 
 # set customizations
@@ -39,7 +32,7 @@ set -o ignoreeof	# prevent Ctrl+d from automatically logging you out.
 
 # stty customizations
 stty -ixon		# disable Ctrl+s and Ctrl+q.
-stty erase ^H		# enable the backspace keystroke.
+stty erase ^H	# enable the backspace keystroke.
 stty ek			# ???
 
 # custom aliases
@@ -61,12 +54,8 @@ alias jl='j -l'
 alias jt='j -t recent'
 alias jr='j -t rank'
 
-
 #take me home, because I am lazy
 alias home='cd ~/'
-
-#subblime edit
-alias se='open -a "Sublime Text 2"'
 
 #clean up unused branches
 alias git_cleanup_local='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
@@ -77,10 +66,6 @@ alias pg_start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/ser
 alias pg_stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 alias pg_tail='tail -f /usr/local/var/postgres/server.log'
 export PGHOST=localhost
-
-#Mongo
-#alias mongostart='mongod --dbpath=/Users/jacquelinekazil/Projects/code/data/mongodb/ &'
-
 
 # Set prompt display
 __has_parent_dir () {
