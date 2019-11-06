@@ -9,12 +9,18 @@ export HISTFILESIZE=10000
 export HISTCONTROL=ignoredups
 export HISTIGNORE="&:ls:ls *:ll:git:git status"
 
-export PATH=~/bin:/usr/local/sbin:/usr/local/mysql/bin:${PATH}
+export PATH=~/bin:/usr/local/sbin:${PATH}
 export PATH=/usr/local/bin:$PATH
+
+# This is to add pipenv to my path, according to these docs:
+# https://docs.python-guide.org/dev/virtualenvs/
+export PATH=/Users/jackie/Library/Python/3.7/bin:$PATH
 
 export PGHOST="/var/pgsql_socket"
 
 #Python settings
+alias python="python3"
+
 #export WORKON_HOME=$HOME/code/python/envs
 #export PROJECT_HOME=$HOME/code/python/code
 #source /usr/local/bin/virtualenvwrapper.sh
