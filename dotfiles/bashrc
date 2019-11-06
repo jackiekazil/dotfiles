@@ -1,7 +1,4 @@
 # bash export settings
-export TERM=xterm-color
-export CLICOLOR=1
-export LSCOLORS="ExFxCxDxBxegedabagacad"
 export EDITOR=vim
 export LESS="-erX"
 export INPUTRC=~/.inputrc
@@ -22,20 +19,13 @@ export PGHOST="/var/pgsql_socket"
 #export PROJECT_HOME=$HOME/code/python/code
 #source /usr/local/bin/virtualenvwrapper.sh
 
-# shopt customizations
-shopt -s histappend	# append to bash_history if shell quits.
-shopt -s cdspell	# enable spelling corrects to the cd command.
-
 # set customizations
 set -o noclobber	# prevent overwriting files with cat.
 set -o ignoreeof	# prevent Ctrl+d from automatically logging you out.
 
-# stty customizations
-stty -ixon		# disable Ctrl+s and Ctrl+q.
-stty erase ^H	# enable the backspace keystroke.
-stty ek			# ???
-
 # custom aliases
+alias pip="pip3"
+
 alias emacs="emacs -nw"
 alias em="emacs "
 alias vi='vim'
@@ -67,48 +57,6 @@ alias pg_stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 alias pg_tail='tail -f /usr/local/var/postgres/server.log'
 export PGHOST=localhost
 
-# Set prompt display
-__has_parent_dir () {
-    # Utility function so we can test for things like .git/.hg without firing
-    # up a separate process
-    test -d "$1" && return 0;
-
-    current="."
-    while [ ! "$current" -ef "$current/.." ]; do
-        if [ -d "$current/$1" ]; then
-            return 0;
-        fi
-        current="$current/..";
-    done
-
-    return 1;
-}
-
-# This is to fix and define __git_ps1
-source ~/.git-prompt.sh
-
-__vcs_name() {
-    if [ -d .svn ]; then
-        echo " [svn]";
-    elif [ -d RCS ];    then
-        echo " [RCS]";
-    elif __has_parent_dir ".git"; then
-        echo "$(__git_ps1 ' [git %s]')";
-    elif __has_parent_dir ".hg"; then
-        echo " [hg $(hg branch)]"
-    fi
-}
-
-case "$TERM" in
-    xterm-color) color_prompt=yes;;
-esac
-if [ "$color_prompt" = yes ]; then
-    #PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[0;33m\]$(__vcs_name) \[\033[00m\]\$ '
-    PS1='\[\033[01;32m\]\[\033[00m\]:\[\033[01;34m\]\w\[\033[0;33m\]$(__vcs_name) \[\033[00m\]\$ '
-else
-    PS1='\u@\h:\w$(__vcs_name) \$ '
-fi
-#/Set prompt display
 
 #Load local settings
 export LOCALBASH=~/.bash_local

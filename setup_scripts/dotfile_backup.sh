@@ -18,5 +18,8 @@ rm ~/.vimrc
 cp ~/.gitconfig $PROJECT_HOME/dotfiles_backups/gitconfig
 rm ~/.gitconfig
 
+cp ~/.zshrc $PROJECT_HOME/dotfiles_backups/zshrc
+rm ~/.zshrc
+
 echo "DONE! You find them here:"
 echo $PROJECT_HOME/dotfiles_backups

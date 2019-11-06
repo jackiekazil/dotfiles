@@ -12,3 +12,4 @@ ln -s $DOTFILES/bash_profile ~/.bash_profile
 ln -s $DOTFILES/git-prompt.sh ~/.git-prompt.sh
 ln -s $DOTFILES/vimrc ~/.vimrc
 ln -s $DOTFILES/gitconfig ~/.gitconfig
+ln -s $DOTFILES/zshrc  ~/.zshrc
