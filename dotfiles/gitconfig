@@ -39,3 +39,7 @@
 	name = jackiekazil
 	email = jackiekazil@gmail.com
 
+
+[url "git@gitlab.com:"]
+insteadOf = https://gitlab.com/
+

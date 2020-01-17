@@ -21,9 +21,18 @@ export PGHOST="/var/pgsql_socket"
 #Python settings
 alias python="python3"
 
-#export WORKON_HOME=$HOME/code/python/envs
-#export PROJECT_HOME=$HOME/code/python/code
-#source /usr/local/bin/virtualenvwrapper.sh
+export PROJECTS=$HOME/Projects
+export WORKON_HOME=$PROJECTS/envs
+export PROJECT_HOME=$PROJECTS/code
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+source /usr/local/bin/virtualenvwrapper.sh
+
+#Go Settings
+
+export GOPATH=$PROJECTS/code/go
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
 
 # set customizations
 set -o noclobber	# prevent overwriting files with cat.
