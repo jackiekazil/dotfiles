@@ -21,9 +21,9 @@ curl -L http://install.ohmyz.sh | sh
 echo "Install complete."
 echo "-------------------------------------------------------------------------"
 
+
 echo "Installing p10k - zsh profile."
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git powerlevel10k
-echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc
 echo "Install complete."
 echo "-------------------------------------------------------------------------"
 

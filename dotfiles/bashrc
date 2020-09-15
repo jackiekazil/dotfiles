@@ -12,9 +12,6 @@ export HISTIGNORE="&:ls:ls *:ll:git:git status"
 export PATH=~/bin:/usr/local/sbin:${PATH}
 export PATH=/usr/local/bin:$PATH
 
-# This is to add pipenv to my path, according to these docs:
-# https://docs.python-guide.org/dev/virtualenvs/
-export PATH=/Users/jackie/Library/Python/3.7/bin:$PATH
 
 export PGHOST="/var/pgsql_socket"
 
@@ -26,13 +23,16 @@ export WORKON_HOME=$PROJECTS/envs
 export PROJECT_HOME=$PROJECTS/code
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 source /usr/local/bin/virtualenvwrapper.sh
+# This is to add pipenv to my path, according to these docs:
+# https://docs.python-guide.org/dev/virtualenvs/
+export PATH=/usr/local/bin/python3:$PATH
 
 #Go Settings
-
 export GOPATH=$PROJECTS/code/go
 export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
+
 
 # set customizations
 set -o noclobber	# prevent overwriting files with cat.
