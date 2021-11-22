@@ -28,10 +28,13 @@ source /usr/local/bin/virtualenvwrapper.sh
 export PATH=/usr/local/bin/python3:$PATH
 
 #Go Settings
-export GOPATH=$PROJECTS/code/go
-export GOROOT=/usr/local/opt/go/libexec
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:$GOROOT/bin
+# export GOPATH=$PROJECTS/code/go
+# export GOROOT=/usr/local/opt/go/libexec
+# export PATH=$PATH:$GOPATH/bin
+# export PATH=$PATH:$GOROOT/bin
+export GOPATH=$HOME/go
+export GOROOT="$(brew --prefix golang)/libexec"
+export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 
 
 # set customizations

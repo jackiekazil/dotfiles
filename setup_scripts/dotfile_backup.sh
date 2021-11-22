@@ -1,4 +1,4 @@
-export PROJECT_HOME=$HOME/Projects/code
+export PROJECT_HOME=$HOME/projects/code
 
 echo "Let's back up the existing dotfiles before overriding them!"
 
