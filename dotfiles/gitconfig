@@ -1,47 +1,21 @@
-#[include]
-#  # For username / creds / etc
-#  path = ~/.gitconfig.local
-
-#[core]
-#    repositoryformatversion = 0
-#    filemode = true
-#    bare = false
-#    logallrefupdates = true
-#    ignorecase = true
-
-#[merge]
-#    tool = diffmerge
-
-#[mergetool "chdiff"]
-#    cmd = /usr/bin/env chdiff --wait "$LOCAL" "$REMOTE"
-#    keepBackup = false
-#    trustExitCode = false
-
-#[mergetool "diffmerge"]
-#    cmd = diffmerge --merge --result="$MERGED" "$LOCAL" "$BASE" "$REMOTE"
-#    trustExitCode = false
-
-
 [color]
     branch = true
     diff = true
     status = true
 
-#[gc]
-#    auto = 10
+[alias]
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    summarize = !git log --date=iso --author='jackie' --since=`date +%Y-%m-%d` --until=`date -v +1d +%Y-%m-%d`  --summary --show-notes --oneline --date-order
+    lg1 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%cr)%C(reset) %C(white)%s%C(reset) %C(bold white)— %cn%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
+    lg2 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%cD%C(reset) %C(bold green)(%cr)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(bold white)— %cn%C(reset)' --abbrev-commit
 
-#[alias]
-#    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
-#    summarize = !git log --date=iso --author='jackie' --since=`date +%Y-%m-%d` --until=`date -v +1d +%Y-%m-%d`  --summary --show-notes --oneline --date-order
-#    lg1 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%cr)%C(reset) %C(white)%s%C(reset) %C(bold white)— %cn%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
-#    lg2 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%cD%C(reset) %C(bold green)(%cr)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(bold white)— %cn%C(reset)' --abbrev-commit
 [user]
 	name = jackiekazil
 	email = jackiekazil@gmail.com
 
 
 [url "git@gitlab.com:"]
-insteadOf = https://gitlab.com/
+    insteadOf = https://gitlab.com/
 
 [url "git@github.com:"]
     insteadOf = https://github.com/
